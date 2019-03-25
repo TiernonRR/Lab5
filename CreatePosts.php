@@ -9,10 +9,14 @@
       exit();
     }
 
-    $findUser = "SELECT user_id from Users where user_id = userName";
+    $findUser = "SELECT user_id from Users where user_id = userName;";
 
     if($userLookup = $mysqli->query($findUser)){
-     // $addPost = "INSERT INTO Posts(post_id, content, author_id) VALUES(,".$post . "," . $userName . " ) ";
+        if($post != ""){
+            $addPost = "INSERT INTO Posts(content, author_id) VALUES(" . $post . "," . $userName . " );";
+            if($addedPost = $mysqli->query($addPost)){
+                echo "Post added successfully.";
+        }
     }
     else{
       echo "Account not fount!";
