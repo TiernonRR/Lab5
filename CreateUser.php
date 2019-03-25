@@ -9,7 +9,7 @@
 
 
     $addUser = "INSERT INTO Users(user_id) VALUES ('" . $userName . "')";
-    echo $addUser;
+    
     if($newLogin = $mysqli->query($addUser)){
       echo "Login Successful";
     }
