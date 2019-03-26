@@ -17,4 +17,5 @@
       echo "Unable to login";
     }
 
+    $mysqli->close();
  ?>

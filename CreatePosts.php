@@ -25,4 +25,5 @@
       echo "Account not fount!";
     }
 
+    $mysqli->close();
  ?>
