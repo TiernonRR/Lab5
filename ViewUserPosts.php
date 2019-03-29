@@ -7,7 +7,6 @@
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
   }
-  echo $choice;
 
 
   $userPosts = "SELECT content from Posts WHERE author_id = " . "'$choice'";
