@@ -10,15 +10,16 @@
   $users = "SELECT user_id from Users";
   
   if ($result = $mysqli->query($users)) {
-      echo "<form action=". "'ViewUserPosts.php'" . " method=" . "' post ' " . " action=" ."''" .">";
-      echo "<select>";
+      echo "<form action=". "'ViewUserPosts.php'" . " method=" . "'POST' />";
+      echo "<select name = " . "'userChoice'" . " >";
       /* fetch associative array */
+      echo "<option value = " . "'0'" . ">Select a User</option>";
       while ($row = $result->fetch_assoc()) {
           $data = $row['user_id'];
           echo "<option value = " . "'$data'" . ">" . $data . "</option>";
       }
       echo "</select><br>";
-      echo "<input type=" . "'submit'" . " value=" . "' Submit' " . " name = " . "'action'" . "/>";
+      echo "<input type=" . "'submit'" . " value=" . "' Submit' " . "/>";
       echo "</form>";
       /* free result set */
       $result->free();
