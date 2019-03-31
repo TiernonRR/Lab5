@@ -1,7 +1,7 @@
 <?php
   $userName = $_POST['userID'];
   $post = $_POST['post'];
-  
+  echo "<link rel=" . "'stylesheet'" . " type=" . "'text/css'" . " href=" . "'style.css'" . ">";
   $mysqli = new mysqli("mysql.eecs.ku.edu", "t445r565", "Eiph7Foh", "t445r565");
   /* connection check */
 

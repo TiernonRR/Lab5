@@ -2,6 +2,7 @@
   $choice = $_POST['userChoice'];
   
   $mysqli = new mysqli("mysql.eecs.ku.edu", "t445r565", "Eiph7Foh", "t445r565");
+  echo "<link rel=" . "'stylesheet'" . " type=" . "'text/css'" . " href=" . "'style.css'" . ">";
   /* connection check */
   if ($mysqli->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
