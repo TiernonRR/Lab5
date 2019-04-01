@@ -3,12 +3,22 @@
   <head>
     <title>Posts</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type = "text/javascript">
+      function check(){
+      let input = document.getElementById("userID").value;
+      if(input==""){
+        alert("Please enter a valid username.");
+        return false;
+      }
+      return true;
+      }
+    </script>
   </head>
 
 
   <body>
     <center><h1>Welcome!</h1></center>
-    <form action="CreateUser.php" method="post" action="">
+    <form onsubmit="return check();" action="CreateUser.php" method="post" action="">
       <p>Enter Your Username:</p>
       <input type="text" id = "userID" name = "userID"/>
       <input type="submit" value="Submit" name = "action"/>

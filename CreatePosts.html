@@ -3,12 +3,22 @@
   <head>
     <title>Create</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type = "text/javascript">
+      function check(){
+      let input = document.getElementById("post").value;
+      if(input==""){
+        alert("Please enter valid content.");
+        return false;
+      }
+      return true;
+      }
+    </script>
   </head>
 
 
   <body>
       <h1>Create a Post!</h1>
-    <form action = "CreatePosts.php" method = "post" action = "">
+    <form onsubmit="return check();" action = "CreatePosts.php" method = "post" action = "">
         <p>Enter your username: </p>
         <input type="text" id = "userID" name = "userID"/>
         <br>

@@ -10,20 +10,24 @@
       exit();
     }
     
-    $findUser = "SELECT user_id from Users where user_id = '" . $userName . "'";
-
-    if($userLookup = $mysqli->query($findUser)){
-       $addPost = "INSERT INTO Posts(content, author_id) VALUES('" . $post . "','" . $userName . "' )";
-       if($addedPost = $mysqli->query($addPost)){
-           echo "Post added successfully.";
-       }
-       else{
-         echo "Post was unable to be processed.";
-       }
+    $findUser = "SELECT user_ID from Users where user_ID = " . "'$userName'";
+    
+    $result = $mysqli->query($findUser);
+    $arr = ($result->fetch_all());
+     
+    if(empty($arr)){
+      echo "Account not found!";
     }
     else{
-      echo "Account not fount!";
+     $addPost = "INSERT INTO Posts(content, author_id) VALUES('$post','$userName');";
+      if($addedPost = $mysqli->query($addPost)){
+          echo "Post added successfully.";
+      }
+      else{
+        echo "Post was unable to be processed.";
+      }
     }
-
+  
+    $result->free();
     $mysqli->close();
  ?>
